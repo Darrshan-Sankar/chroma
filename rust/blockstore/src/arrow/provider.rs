@@ -401,11 +401,6 @@ impl SparseIndexManager {
         }
     }
 
-    pub fn create(&self, id: &Uuid) -> SparseIndex {
-        let index = SparseIndex::new(*id);
-        index
-    }
-
     pub async fn flush<'read, K: ArrowWriteableKey + 'read>(
         &self,
         index: &SparseIndex,
